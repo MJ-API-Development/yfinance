@@ -232,6 +232,7 @@ class TickerData:
         prefix = "https://s.yimg.com/uc/finance/dd-site/js/main."
         tags = [tag['src'] for tag in soup.find_all('script') if prefix in tag.get('src', '')]
         for t in tags:
+            print(t)
             response_js = self.cache_get(t)
             #
             if response_js.status_code != 200:
